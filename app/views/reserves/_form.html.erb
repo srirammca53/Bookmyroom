@@ -1,0 +1,31 @@
+<%= form_for(@reserve) do |f| %>
+  <% if @reserve.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reserve.errors.count, "error") %> prohibited this reserve from being saved:</h2>
+
+      <ul>
+      <% @reserve.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <% rooms = Room.all.where(status: true).pluck(:name) %>
+    <%= select_tag(:name, options_for_select(rooms, rooms[0]), :prompt => 'Select') %>
+  </div>
+
+  <div class="field">
+    <%= f.label :from_date %><br>
+    <%= datetime_field_tag :from_date %>
+  </div>
+  <div class="field">
+    <%= f.label :to_date %><br>
+    <%= datetime_field_tag :to_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

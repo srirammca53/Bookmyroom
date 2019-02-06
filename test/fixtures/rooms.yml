@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  status: false
+  from_date: 2019-02-06 06:21:12
+  to_date: 2019-02-06 06:21:12
+
+two:
+  name: MyString
+  status: false
+  from_date: 2019-02-06 06:21:12
+  to_date: 2019-02-06 06:21:12
